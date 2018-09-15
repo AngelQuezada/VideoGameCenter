@@ -1,0 +1,55 @@
+p#newUser{
+    color: white;
+}
+p#localTitle {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+div>p#formTitle {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+div#divLogin{
+    background-color: rgba(0, 0, 255, 0.205);
+    border: solid 1px rgba(212, 199, 9, 0.884);
+    border-radius: 8px 8px 8px 8px;
+    width: 50%;
+    margin-left: 25%;
+}
+input#username {
+    position: relative;
+    left: 22%;
+    background-color: rgba(0, 0, 0, 0);
+    color: antiquewhite;
+    border-bottom: 1px solid white;
+}
+input#password{
+    position: relative;
+    left: 22%;
+    background-color: rgba(0, 0, 0, 0);
+    color: antiquewhite;
+    border-bottom: 1px solid white;
+}
+button#btn-Login{
+    background-color: rgba(0, 0, 0, 0.116);
+    position: relative;
+    left: 40%;
+    margin: 2%;
+}
+button#btn-Login:hover{
+    background-color: rgba(137, 43, 226, 0.137);
+}
+p#forgotPass{
+    color: antiquewhite;
+    margin: 2%;
+}
+footer{
+       position: absolute;
+       bottom: 1%;
+}
+p#footer_text{
+    color: white;
+}
+
