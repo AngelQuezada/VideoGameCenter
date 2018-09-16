@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Determination;
+    src: url(../fonts/DeterminationMonoWeb.woff);
+}
+@font-face {
+    font-family: MonsterFore;
+    src: url(../fonts/MonsterFriendFore.otf);
+}
+p{
+    font-family: Determination;
+}
+p#localTitle {
+    font-family: MonsterFore;
+}
+input{
+    font-family: Determination;
+}
+button#btn-Login {
+   font-family: Determination;
+}

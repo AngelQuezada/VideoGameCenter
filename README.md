@@ -1,2 +1,2 @@
 ### To install dependencies type:
-`bower install`
+`npm install`

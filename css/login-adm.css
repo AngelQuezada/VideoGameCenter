@@ -1,0 +1,51 @@
+p#localTitle {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+div>p#formTitle {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+div#divLogin {
+    background-color: rgba(102, 22, 85, 0.349);
+    border: solid 1px white;
+    border-radius: 8px 8px 8px 8px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+input#usuario{
+    color: rgb(241, 75, 125);
+}
+button#btn-Login {
+    background-color: rgba(57, 24, 204, 0.233);
+    position: relative;
+    left: 40%;
+    margin: 2%;
+}
+
+button#btn-Login:hover {
+    background-color: rgba(226, 43, 226, 0.205);
+}
+
+p#forgotPass {
+    color: antiquewhite;
+    margin: 2%;
+}
+
+footer {
+    position: absolute;
+    left: 4%;
+    display: block;
+    background-color: rgba(8, 45, 255, 0.144);
+    position: absolute;
+    bottom: 1%;
+}
+
+p#footer_text {
+    color: white;
+}

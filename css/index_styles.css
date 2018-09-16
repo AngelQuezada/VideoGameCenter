@@ -19,35 +19,33 @@ div#divLogin{
     margin-left: 25%;
 }
 input#username {
-    position: relative;
-    left: 22%;
-    background-color: rgba(0, 0, 0, 0);
-    color: antiquewhite;
-    border-bottom: 1px solid white;
+    color: rgb(241, 75, 125);
 }
+
 input#password{
-    position: relative;
-    left: 22%;
-    background-color: rgba(0, 0, 0, 0);
-    color: antiquewhite;
-    border-bottom: 1px solid white;
+     color: rgb(241, 75, 125);
+     font-family: Determination;
 }
 button#btn-Login{
-    background-color: rgba(0, 0, 0, 0.116);
+    background-color: rgba(16, 7, 143, 0.658);
     position: relative;
     left: 40%;
     margin: 2%;
 }
 button#btn-Login:hover{
-    background-color: rgba(137, 43, 226, 0.137);
+    background-color: rgba(137, 43, 226, 0.411);
 }
 p#forgotPass{
     color: antiquewhite;
     margin: 2%;
 }
 footer{
-       position: absolute;
-       bottom: 1%;
+          position: absolute;
+          left: 4%;
+          display: block;
+          background-color: rgba(8, 45, 255, 0.144);
+          position: absolute;
+          bottom: 1%;
 }
 p#footer_text{
     color: white;
