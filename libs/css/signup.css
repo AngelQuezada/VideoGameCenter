@@ -1,3 +1,7 @@
+p#newUser {
+    color: white;
+}
+
 p#localTitle {
     color: white;
     text-align: center;
@@ -11,25 +15,38 @@ div>p#formTitle {
 }
 
 div#divLogin {
-    background-color: rgba(102, 22, 85, 0.349);
-    border: solid 1px white;
+    background-color: rgba(0, 0, 255, 0.205);
+    border: solid 1px rgba(212, 199, 9, 0.884);
     border-radius: 8px 8px 8px 8px;
     width: 50%;
     margin-left: 25%;
 }
 
-input#usuario{
+input {
     color: rgb(241, 75, 125);
+    font-family: Determination;
 }
-button#btn-Login {
-    background-color: rgba(57, 24, 204, 0.233);
+
+div#formButtons {
     position: relative;
     left: 40%;
     margin: 2%;
 }
 
-button#btn-Login:hover {
-    background-color: rgba(226, 43, 226, 0.205);
+button#btn-signup {
+    background-color: rgba(12, 143, 7, 0.658);
+}
+
+button#btn-signup:hover {
+    background-color: rgba(137, 43, 226, 0.411);
+}
+
+button#btn-cancel {
+    background-color: rgba(194, 32, 32, 0.658);
+}
+
+button#btn-cancel:hover {
+    background-color: rgba(236, 103, 136, 0.658);
 }
 
 p#forgotPass {
@@ -38,12 +55,8 @@ p#forgotPass {
 }
 
 footer {
-    position: absolute;
-    left: 4%;
     display: block;
     background-color: rgba(8, 45, 255, 0.144);
-    position: absolute;
-    bottom: 1%;
 }
 
 p#footer_text {

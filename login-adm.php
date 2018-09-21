@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/login-adm.css">
+    <link rel="stylesheet" href="libs/css/fonts.css">
+    <link rel="stylesheet" href="libs/css/login-adm.css">
     <title>*Admin Login Page*</title>
 </head>
 <body background="src/assets/background_login.png" width="50%">
@@ -36,7 +36,7 @@
     </form>
   </div>
     <footer>
-        <p id="footer_text">VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos. <a href="https://github.com/AngelQuezada/VideoGameCenter" style="color: pink;">Fork me on Github</a><i class="fab fa-github fa-2x" style="color:white"></i> version: 0.0.1</p>
+        <p id="footer_text">VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
     </footer>
 </body>
 <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>

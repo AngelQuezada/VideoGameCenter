@@ -17,10 +17,9 @@
   },
   "homepage": "https://github.com/AngelQuezada/VideoGameCenter#readme",
   "dependencies": {
-    "@angular/animations": "^6.1.7",
-    "@angular/cdk": "^6.4.7",
-    "@angular/material": "^6.4.7",
     "@fortawesome/fontawesome-free": "^5.3.1",
+    "bulma-start": "0.0.2",
     "materialize-css": "^1.0.0-rc.2"
-  }
+  },
+  "devDependencies": {}
 }
