@@ -20,12 +20,12 @@
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix" style="color: white">email</i>
-          <input id="email" type="text" class="validate">
+          <input id="email" type="text" class="validate" required>
           <label for="email">Email</label>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix" style="color: white">lock_outline</i>
-         <input id="password" type="password" class="validate">
+         <input id="password" type="password" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
