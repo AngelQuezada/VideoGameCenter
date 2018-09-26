@@ -41,3 +41,7 @@ input{
 button#btn-Login {
    font-family: Determination;
 }
+a.navbar-brand{
+    font-size: 130%;
+    font-family: MonsterFore;
+}

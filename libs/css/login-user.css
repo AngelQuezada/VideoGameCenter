@@ -18,7 +18,7 @@ div#divLogin{
     width: 50%;
     margin-left: 25%;
 }
-input#username {
+input#email {
     color: rgb(241, 75, 125);
 }
 
@@ -40,12 +40,12 @@ p#forgotPass{
     margin: 2%;
 }
 footer{
-          position: absolute;
-          left: 9%;
-          display: block;
-          background-color: rgba(8, 45, 255, 0.144);
-          position: absolute;
-          bottom: 1%;
+    position: absolute;
+    left: 9%;
+    display: block;
+    background-color: rgba(8, 45, 255, 0.144);
+    position: absolute;
+    bottom: 1%;
 }
 p#footer_text{
     color: white;
