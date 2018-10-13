@@ -1,7 +1,7 @@
 <?php
 require_once('include/connection.php');
 
-class Administrator{
+class administrator{
     private $name;
     private $lastName;
     private $maidenName;
