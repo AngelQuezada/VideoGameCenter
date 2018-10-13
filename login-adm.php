@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="libs/css/login-adm.css">
     <title>*Admin Login Page*</title>
 </head>
+<button onClick="mainPage();" class="btn waves-effect waves-light" id="btn-cancel">Return to Main Page
+    <i class="material-icons right">cancel</i>
+</button>
 <body background="src/assets/background_login.png" width="50%">
     <p id="localTitle">VideoGame Center</p>
 <div id="divLogin">
@@ -39,6 +42,11 @@
         <p id="footer_text">VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
     </footer>
 </body>
+<script>
+  function mainPage(){
+    this.location.href = "index.php";
+  }
+</script>
 <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 <script src="node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
 </html>

@@ -24,7 +24,6 @@ button#btnLogin:hover{
 button#btnCategories{
     background-color: rgb(18, 143, 7);
     color: white;
-    
 }
 button#btnCategories:hover{
     background-color: rgba(19, 235, 30, 0.63);
@@ -32,7 +31,6 @@ button#btnCategories:hover{
 button#btnExclusives{
     background-color: rgb(143, 7, 7);
     color: white;
-    
 }
 button#btnExclusives:hover{
     background-color: rgba(214, 9, 43, 0.411);
@@ -40,10 +38,9 @@ button#btnExclusives:hover{
 }
 footer{
     position: absolute;
-    left: 9%;
+    left: 5%;
     display: block;
-    background-color: rgba(16, 85, 235, 0.185);
-  
+    background-color: rgba(16, 85, 235, 0.76);
 }
 p#footer_text{
     color: white;

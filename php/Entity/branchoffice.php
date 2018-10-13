@@ -2,7 +2,6 @@
 require_once('include/connection.php');
 
 class branchOffice{
-    
     private $branchoffice_name;
     private $address;
 

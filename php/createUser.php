@@ -1,5 +1,5 @@
 <?php
-require_once('User.php');
+require_once('Entity/user.php');
 if(isset($_POST['username'])){
     $username = $_POST['username'];
 }
@@ -30,6 +30,6 @@ if(isset($_POST['lastName'])){
 if(isset($_POST['maidenName'])){
     $maidenName = $_POST['maidenName'];
 }
-User::createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName);
+user::createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName);
 exit;
     

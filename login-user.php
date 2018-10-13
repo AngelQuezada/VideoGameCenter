@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="libs/css/login-user.css">
     <title>Login</title>
 </head>
+<button onClick="mainPage();" class="btn waves-effect waves-light" id="btn-cancel">Return to Main Page
+    <i class="material-icons right">cancel</i>
+</button>
 <body background="src/assets/background_login.png" width="50%">
 <p id="newUser">New Here? <a href="src/pages/signup.html"> <b>Sign Up</a></p></p>
     <p id="localTitle">VideoGame Center</p>
@@ -39,5 +42,10 @@
         <p id="footer_text">VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
     </footer>
 </body>
+<script>
+  function mainPage(){
+    this.location.href = "index.php";
+  }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

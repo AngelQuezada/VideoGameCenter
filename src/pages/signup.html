@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="../../libs/css/fonts.css">
     <link rel="stylesheet" href="../../libs/css/signup.css">
-<script>
-    function mainpage() {
-        this.location.href = "../index.php";
-    }
-</script>
     <title>Sign Up VideoGame Center</title>
 </head>
 <button onClick="javascript:history.back();" class="btn waves-effect waves-light" id="btn-cancel">Cancel and Back to Home
@@ -82,10 +77,15 @@
                     <i class="material-icons right">input</i>
                 </button>
             </div>
-            <p id="forgotPass">Already Account? <b>Just Log In<a href="../../index.php"> Here</a></p>
+            <p id="forgotPass">Already Account? <b>Just Log In<a href="../../login-user.php"> Here</a></p>
         </form>
     </div>
 </body>
+<script>
+    function mainpage() {
+        this.location.href = "../index.php";
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 <script src="../../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>

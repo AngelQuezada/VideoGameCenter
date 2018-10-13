@@ -1,6 +1,6 @@
 <?php
 require_once('include/connection.php');
-class User 
+class user 
 {
     private $username;
     private $email;
@@ -12,7 +12,6 @@ class User
     private $name;
     private $lastName;
     private $maidenName;
-
 
     function __construct($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
          $this->username=$username;
@@ -34,6 +33,14 @@ class User
         unset($db);
         return $data[0];
     }
+    //Buscar un usuario por  correo registrado
+    public static function searchUser($email){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT * FROM user WHERE email='".$email."'");
+        $db->closeConnection();
+        unset($db);
+        return isset($data[0]);
+    }
     //Registrar un nuevo Usuario
     public static function createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
         $pass = SHA1($password);
@@ -44,13 +51,5 @@ class User
         $db->closeConnection();
         unset($db);
         echo "<script> location.href=index.php</script>";
-    }
-    //Buscar un usuario por  correo registrado
-    public static function searchUser($email){
-        $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT * FROM user WHERE email='".$email."'");
-        $db->closeConnection();
-        unset($db);
-        return isset($data[0]);
     }
 }

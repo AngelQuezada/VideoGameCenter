@@ -22,7 +22,7 @@
           if(isset($_SESSION['user']) && $_SESSION['user'] != ""){
             echo '<button class="btn btn-outline-primary " id="btnLogin">Logout</button>';
           }else{
-            echo '<button class="btn btn-outline-primary " id="btnLogin">Login</button>';
+            echo '<button onclick="loginPage();" class="btn btn-outline-primary " id="btnLogin">Login</button>';
           }
           ?>
       </li>
@@ -82,28 +82,33 @@
   <!-- Games PC -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PC</p>
   <div class="jumbotron" style="opacity: 0.5">
-  dsdsdd
+    dsdsdd
   </div>
   <!-- Games One -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Xbox One</p>
   <div class="jumbotron" style="opacity: 0.5">
-  dsdsdd
+    dsdsdd
   </div>
   <!-- Games Nintendo Switch -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Nintendo Switch</p>
   <div class="jumbotron" style="opacity: 0.5">
-  dsdsdd
+    dsdsdd
   </div>
   <!-- Games PS4 -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PS4</p>
   <div class="jumbotron" style="opacity: 0.5">
-  dsdsdd
+    dsdsdd
   </div>
   
   <footer>
-        
+    <p id="footer_text"><a href="login-adm.php" style="color: white; ">Admin Log</a> | VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
   </footer>
 </body>
+<script>
+  function loginPage(){
+    this.location.href = "login-user.php";
+  }
+</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
