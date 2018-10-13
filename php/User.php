@@ -15,17 +15,18 @@ class User
 
 
     function __construct($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
-         this.$username=$username;
-         this.$email=$email;
-         this.$password=$password;
-         this.$address=$address;
-         this.$houseNumber=$houseNumber;
-         this.$cp=$cp;
-         this.$city=$city;
-         this.$name=$name;
-         this.$lastName=$lastName;
-         this.$maidenName=$maidenName;
-    } 
+         $this->username=$username;
+         $this->email=$email;
+         $this->password=$password;
+         $this->address=$address;
+         $this->houseNumber=$houseNumber;
+         $this->cp=$cp;
+         $this->city=$city;
+         $this->name=$name;
+         $this->lastName=$lastName;
+         $this->maidenName=$maidenName;
+    }
+    //Obtener cantidad de usuarios registrados
     public function users(){    
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT COUNT(*) FROM user");
@@ -33,6 +34,7 @@ class User
         unset($db);
         return $data[0];
     }
+    //Registrar un nuevo Usuario
     public static function createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
         $pass = SHA1($password);
         $db = new sqlConnection();
@@ -41,8 +43,9 @@ class User
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        echo "<script> location.href=index.php'</script>";
+        echo "<script> location.href=index.php</script>";
     }
+    //Buscar un usuario por  correo registrado
     public static function searchUser($email){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM user WHERE email='".$email."'");

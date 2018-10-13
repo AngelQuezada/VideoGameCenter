@@ -21,6 +21,9 @@ div#divLogin {
 input#usuario{
     color: rgb(241, 75, 125);
 }
+input#password{
+    color: rgb(241, 75, 125);
+}
 button#btn-Login {
     background-color: rgba(57, 24, 204, 0.233);
     position: relative;

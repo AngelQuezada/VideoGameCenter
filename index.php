@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="libs/css/index.css">
     <title>VIDEOGAME CENTER | Inicio</title>
 </head>
-<body>
+<body background="src/assets/background_index.png" width="50%">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="#">VideoGame Center</a>
     <ul class="navbar-nav" style="position: relative; left: 50%;">
@@ -31,10 +31,10 @@
   <p style="color: white; text-align: center; font-size: 200%">Check our Games!</p>
   <div class="row">
     <div class="col-sm-4">
-        <div class="card" style="width:400px">
-            <img class="card-img-top" src="src/assets/games/undertale/undertale_front.png" alt="Undertale">
+        <div class="card" id="undertale" style="width:400px">
+            <img class="card-img-top" src="src/assets/games/undertale/undertale.png" alt="Undertale">
             <div class="card-body">
-              <h4 class="card-title">NEW! Undertale</h4>
+              <h4 class="card-title">Undertale on PC,PS4 and SWITCH</h4>
               <p class="card-text">Undertale is a role-playing video game created by American indie developer Toby Fox. 
                 In the game, players control a human child who has fallen into the Underground, 
                 a large, secluded region underneath the surface of the Earth, separated by a magic 
@@ -45,7 +45,7 @@
           </div>
     </div>
     <div class="col-sm-4">
-        <div class="card" style="width:400px;">
+        <div class="card" id="crash" style="width:400px;">
             <img class="card-img-top" src="src/assets/games/crash/crash.jpg" alt="Crash">
             <div class="card-body">
               <h4 class="card-title">Crash Bandicoot on PS4 and PC</h4>
@@ -61,7 +61,7 @@
           </div>
     </div>
     <div class="col-sm-4">
-        <div class="card" style="width:400px">
+        <div class="card" id="klonoa" style="width:400px">
             <img class="card-img-top" src="src/assets/games/klonoa/klonoa.jpg" alt="Undertale">
             <div class="card-body">
               <h4 class="card-title">Klonoa on Nintendo Wii</h4>
@@ -78,6 +78,28 @@
     </div>
     </div> <!-- /card -->
   </div> <!-- /row -->
+  <br/>
+  <!-- Games PC -->
+  <p style="color: white; text-align: center; font-size: 200%">Games on PC</p>
+  <div class="jumbotron" style="opacity: 0.5">
+  dsdsdd
+  </div>
+  <!-- Games One -->
+  <p style="color: white; text-align: center; font-size: 200%">Games on Xbox One</p>
+  <div class="jumbotron" style="opacity: 0.5">
+  dsdsdd
+  </div>
+  <!-- Games Nintendo Switch -->
+  <p style="color: white; text-align: center; font-size: 200%">Games on Nintendo Switch</p>
+  <div class="jumbotron" style="opacity: 0.5">
+  dsdsdd
+  </div>
+  <!-- Games PS4 -->
+  <p style="color: white; text-align: center; font-size: 200%">Games on PS4</p>
+  <div class="jumbotron" style="opacity: 0.5">
+  dsdsdd
+  </div>
+  
   <footer>
         
   </footer>
