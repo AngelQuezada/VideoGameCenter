@@ -20,7 +20,7 @@ class sqlConnection
         }
     }
     public function queryBuilder($query){
-        var_dump($query);
+        //var_dump($query);
         $r=mysqli_query($this->connection, $query);
         if (!$query)
         {

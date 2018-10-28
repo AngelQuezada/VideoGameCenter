@@ -1,5 +1,5 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 class user 
 {
     private $username;
@@ -13,30 +13,19 @@ class user
     private $lastName;
     private $maidenName;
 
-    function __construct($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
-         $this->username=$username;
-         $this->email=$email;
-         $this->password=$password;
-         $this->address=$address;
-         $this->houseNumber=$houseNumber;
-         $this->cp=$cp;
-         $this->city=$city;
-         $this->name=$name;
-         $this->lastName=$lastName;
-         $this->maidenName=$maidenName;
+    public function __construct(){
+        //$conn = "../include/connection.php";
+        require_once('connection.php');
     }
-    // //Verifica que solo admita peticiones AJAX
-    // public static function reqAjax(){
-    //     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
-    // }
     //Obtener cantidad de usuarios registrados
-    public function users(){
+    public static function users(){
         try{
             $db = new sqlConnection();
-            $data = $db->queryBuilder("SELECT COUNT(*) FROM user");
+            $data = $db->queryBuilder("SELECT COUNT(*) as total FROM user");
+            $info=mysqli_fetch_assoc($data);
             $db->closeConnection();
             unset($db);
-            return $data[0];
+            return $info['total'];
         } catch(Excepcion $e){
             $error = $e->getMessage();
         }
@@ -83,10 +72,10 @@ class user
         if($result == 1){
             session_start();
             $_SESSION["autenticado"]="si";
-            echo "<script>alert('You are now Log in');</script>";
+            echo '<script type="text/javascript">alert("You are now Log in");';
             header("Location: http://localhost/VideoGameCenter/index.php");
         }else{
-            echo "<script>alert('User or password are invalid!');</script>";
+            echo '<script type="text/javascript">alert("Email or password are invalid!");</script>';
             header("Location: http://localhost/VideoGameCenter/login-user.html");
         }
     }
