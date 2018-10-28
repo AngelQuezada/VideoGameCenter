@@ -1,3 +1,6 @@
+<?php
+    include ("../../validate-adm.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,11 +17,17 @@
     <ul class="navbar-nav" style="position: relative; left: 50%;">
       <li class="nav-item">
           <button class="btn btn-outline-primary " id="btnCategories">Configure Admins</button>
-          <button class="btn btn-outline-danger " id="btnLogout">Logout</button>
+          <button class="btn btn-outline-danger " id="btnLogout" onclick="logout()">Logout</button>
       </li>
     </ul>
   </nav>
 </body>
+<script>
+    function logout(){
+        alert("Yout have closed session");
+        this.location.href = "../../logout-adm.php"
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>

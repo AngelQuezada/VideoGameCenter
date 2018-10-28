@@ -28,6 +28,18 @@ class sqlConnection
         }
         return $r;
     }
+    public function queryLogin($query){
+        //var_dump($query);
+        $r=mysqli_query($this->connection, $query);
+        if(!$r){
+            //var_dump($r);
+            //die;
+            return $r;
+            //exit;
+        }
+        $row_count = mysqli_num_rows($r);
+        return $row_count;
+    }
     
     public function closeConnection(){
         mysqli_close($this->connection);

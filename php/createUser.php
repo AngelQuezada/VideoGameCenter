@@ -1,4 +1,5 @@
 <?php
+
 require_once('Entity/user.php');
 if(isset($_POST['username'])){
     $username = $_POST['username'];

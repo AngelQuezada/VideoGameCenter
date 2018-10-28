@@ -39,6 +39,9 @@ p#forgotPass{
     color: antiquewhite;
     margin: 2%;
 }
+.btn modal-trigger{
+    margin: 2%;
+}
 footer{
     position: absolute;
     left: 9%;
@@ -48,6 +51,18 @@ footer{
     bottom: 1%;
 }
 p#footer_text{
+    color: white;
+}
+.modal{
+    border: 2px solid yellow;
+    border-radius: 7px 7px 7px 7px;
+    color:white;
+    background-color: rgba(20, 1, 87, 0.877);
+}
+.modal>.modal-footer{
+    background-color: rgba(45, 1, 87, 0.877);
+}
+.modal>.modal-footer>a{
     color: white;
 }
 

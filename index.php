@@ -1,3 +1,6 @@
+<?php
+  include ("validate-user.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,13 +21,7 @@
       <li class="nav-item">
           <button class="btn btn-outline-primary " id="btnCategories">Game Categories</button>
           <button class="btn btn-outline-primary " id="btnExclusives">Exclusive</button>
-          <?php
-          if(isset($_SESSION['user']) && $_SESSION['user'] != ""){
-            echo '<button class="btn btn-outline-primary " id="btnLogin">Logout</button>';
-          }else{
-            echo '<button onclick="loginPage();" class="btn btn-outline-primary " id="btnLogin">Login</button>';
-          }
-          ?>
+          <button class="btn btn-outline-primary " onclick="logout()" id="btnLogin">Logout</button>;
       </li>
     </ul>
   </nav>
@@ -83,7 +80,7 @@
   <p style="color: white; text-align: center; font-size: 200%">Games on PC</p>
   <div class="jumbotron" style="opacity: 0.5">
     dsdsdd
-  </div>
+  </div> <!--/jumbotron PC -->
   <!-- Games One -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Xbox One</p>
   <div class="jumbotron" style="opacity: 0.5">
@@ -99,14 +96,14 @@
   <div class="jumbotron" style="opacity: 0.5">
     dsdsdd
   </div>
-  
   <footer>
     <p id="footer_text"><a href="login-adm.php" style="color: white; ">Admin Log</a> | VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
   </footer>
 </body>
 <script>
-  function loginPage(){
-    this.location.href = "login-user.php";
+  function logout(){
+    alert("You have closed session");
+    this.location.href = "logout.php";
   }
 </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

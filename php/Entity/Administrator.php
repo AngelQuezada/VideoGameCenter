@@ -44,4 +44,20 @@ class administrator{
         $data = $db->queryBuilder($sql);
         unset($db);
     }
+    public static function loginAdmin($username,$password){
+        $pass = SHA1($password);
+        $db = new sqlConnection();
+        $sql = 'SELECT * FROM administrator';
+        $sql .= " WHERE username = '".$username."' AND password = '".$pass."'";
+        $result = $db->queryLogin($sql);
+        if($result == 1){
+            session_start();
+            $_SESSION["admin"]="si";
+            echo "<script>alert('You are now Log in');</script>";
+            header("Location: http://localhost/VideoGameCenter/src/pages/dashboard.php");
+        }else{
+            echo "<script>alert('User or password are invalid!');</script>";
+            header("Location: http://localhost/VideoGameCenter/login-adm.html");
+        }
+    }
 }
