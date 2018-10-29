@@ -1,15 +1,13 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
 class status{
     private $id_ticket;
     private $date_ticket;
     private $status;
     
-    function __construct($id_ticket,$date_ticket,$status){
-        $this->id_ticket=$id_ticket;
-        $this->date_ticket=$date_ticket;
-        $this->status=$status;
+    function __construct(){
+        require_once('connection.php');
     }
     //Obtener todos los registros de status
     public function status(){
@@ -20,12 +18,13 @@ class status{
         return $data;
     }
     //Obtener cantidad de status
-    public function quantityStatuss(){
+    public function quantityStatus(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM status");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM status");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
     //Dar de alta un nuevo status
     public function createStatus($id_ticket,$date_ticket,$status){

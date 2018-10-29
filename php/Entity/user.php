@@ -41,8 +41,8 @@ class user
     }
     //Actualiza Password
     public static function updatePassword($email,$password){
-        var_dump($email);
-        var_dump($password);
+        // var_dump($email);
+        // var_dump($password);
         $pass = SHA1($password);
         $db = new sqlConnection();
         $sql = 'UPDATE user';
@@ -50,6 +50,17 @@ class user
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
+    }
+    //Actualiza Username
+    public static function updateUsername($usernameOld,$usernameNew){
+        $db = new sqlConnection();
+        $sql = 'UPDATE user';
+        $sql .= " SET username = '".$usernameNew."' WHERE username = '".$usernameOld."'";
+        $result = $db->queryBuilder($sql);
+        echo "<script>alert('Username has been updated successfuly!');</script>";
+        $db->closeConnection();
+        unset($db);
+        header("Location: http://localhost/VideoGameCenter/src/pages/manage-user.php");
     }
     //Registrar un nuevo Usuario
     public static function createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){

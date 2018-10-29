@@ -1,13 +1,12 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
-class branchOffice{
+class branchoffice{
     private $branchoffice_name;
     private $address;
 
-    function __construct($branchoffice_name,$address){
-        $this->branchoffice_name=$branchoffice_name;
-        $this->address=$address;
+    function __construct(){
+        require_once('connection.php');
     }
     //Obtener todas las sucursales
     public function branchOffices(){
@@ -20,10 +19,11 @@ class branchOffice{
     //Obtener cantidad de sucursales
     public function quantityBranchOffices(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM branchoffice");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM branchoffice");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
     //Dar de alta una nueva sucursal
     public static function createBranchOffice($branchoffice_name,$address){
@@ -31,7 +31,9 @@ class branchOffice{
         $sql = 'INSERT INTO branchoffice';
         $sql .= " VALUES(null,'".$branchoffice_name."','".$address."');";
         $result = $db->queryBuilder($sql);
+        echo "<script>alert('BO has been created successfuly!');</script>";
         $db->closeConnection();
         unset($db);
+        header("Location: http://localhost/VideoGameCenter/src/pages/manage-bo.php");
     }
 }

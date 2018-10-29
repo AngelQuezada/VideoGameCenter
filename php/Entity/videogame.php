@@ -1,5 +1,5 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
 class videogame{
     private $thumbnail;
@@ -11,15 +11,8 @@ class videogame{
     private $description;
     private $provider_name;
 
-    function __construct($thumbnail,$company,$console_name,$title,$price,$release_date,$description,$provider_name){
-        $this->thumbnail=$thumbnail;
-        $this->company=$company;
-        $this->console_name=$console_name;
-        $this->title=$title;
-        $this->price=$price;
-        $this->release_date=$release_date;
-        $this->description=$description;
-        $this->provider_name=$provider_name;
+    function __construct(){
+        require_once('connection.php');
     }
      //Obtener todos los videojuegos
      public function videogames(){
@@ -32,10 +25,11 @@ class videogame{
     //Obtener cantidad de videojuegs
     public function quantityVideogames(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM videogame");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM videogame");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
      //Obtener todos los videojuegos por categoria
      public static function videogame($console_name){

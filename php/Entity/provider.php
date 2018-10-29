@@ -1,5 +1,5 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
 class provider{
     private $company_name;
@@ -7,6 +7,7 @@ class provider{
     private $address;
 
     function __construct($company_name,$RFC,$address){
+        require_once('connection.php');
         $this->company_name=$company_name;
         $this->RFC=$RFC;
         $this->address=$address;
@@ -22,10 +23,11 @@ class provider{
     //Obtener cantidad de proveedores
     public function quantityProviders(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM provider");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM provider");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
     //Dar de alta un nuevo proveedor
     public static function createProvider($company_name,$RFC,$address){

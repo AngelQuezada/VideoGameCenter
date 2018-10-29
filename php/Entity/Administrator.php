@@ -10,22 +10,17 @@ class administrator{
     private $RFC;
     private $birthdate;
 
-    function __construct($name,$lastName,$maidenName,$username,$password,$RFC,$birthdate){
-        $this->name=$name;
-        $this->lastName=$name;
-        $this->maidenName=$maidenName;
-        $this->username=$username;
-        $this->password=$password;
-        $this->RFC=$RFC;
-        $this->birthdate=$birthdate;
+    function __construct(){
+        require_once('connection.php');
     }
     //Obtener cantidad de Administradores
     public function admins(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM administrator");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM administrator");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
     //Dar de alta un nuevo admin
     public static function createAdmin($name,$lastName,$maidenName,$username,$password,$RFC,$birthdate){

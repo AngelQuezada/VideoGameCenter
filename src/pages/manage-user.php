@@ -15,7 +15,7 @@ $cant = $users->users();
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <title>Manage Users</title>
 </head>
-<body>
+<body style="background: gray">
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -30,9 +30,29 @@ $cant = $users->users();
         </div><!-- card -->
     </div>
 </div>
+</div><br>
+<div class="jumbotron" style="text-align: center;width: 50%;margin-left: 25%;margin-right: 25%;margin-bottom: 0px;">
+    <p>Modify the username of User</p>
+    <form action="../../php/modifyUsername.php" method="POST" id="formEditUsername" autocomplete="off">
+        <div class="form-group">
+            <label for="usernameOld">Old Username</label>
+            <input class="form-control" id="usernameOld" type="text" name="usernameOld" placeholder="Type the current Username" required>
+        </div>
+        <div class="form-group">
+            <label for="newUsername">New Username</label>
+            <input class="form-control" id="newUsername" type="text" name="newUsername" placeholder="Type the new Username" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Changes</button>
+    </form>
+    <br>
+    <button class="btn btn-danger" onclick="dashboard()">Return to DASHBOARD</button>
 </div>
-    
 </body>
+<script>
+    function dashboard(){
+        this.location.href = "dashboard.php";
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>

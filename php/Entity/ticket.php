@@ -1,5 +1,5 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
 class ticket{
     private $id_username;
@@ -11,15 +11,8 @@ class ticket{
     private $total;
     private $date;
 
-    function __construct($id_username,$videogame_name,$category_name,$console_name,$quantity,$price,$total,$date){
-        $this->id_username=$id_username;
-        $this->videogame_name=$videogame_name;
-        $this->category_name=$category_name;
-        $this->console_name=$console_name;
-        $this->quantity=$quantity;
-        $this->price=$price;
-        $this->total=$total;
-        $this->date=$date;
+    function __construct(){
+        require_once('connection.php');
     }
     //Dar de alta un ticket
     public static function createTicket($id_username,$videogame_name,$category_name,$console_name,$quantity,$price,$total,$date){
@@ -29,5 +22,14 @@ class ticket{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
+    }
+    //Mostrar ticket
+    public static function showTickets(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT * FROM ticket");
+        $info = mysqli_fetch_array($data);
+        $db->closeConnection();
+        unset($db);
+        return $info;
     }
 }

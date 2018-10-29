@@ -1,10 +1,11 @@
 <?php
-require_once('include/connection.php');
+require_once('connection.php');
 
 class console{
     private $console_name;
 
     function __construct($console_name){
+        require_once('connection.php');
         $this->console_name=$console_name;
     }
     //Obtener todas las consolas
@@ -18,10 +19,11 @@ class console{
     //Obtener cantidad de consolas
     public function quantityConsoles(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT COUNT(*) FROM console");
+        $data = $db->queryBuilder("SELECT COUNT(*) as total FROM console");
+        $info = mysqli_fetch_assoc($data);
         $db->closeConnection();
         unset($db);
-        return $data[0];
+        return $info['total'];
     }
     //Dar de alta una nueva consola
     public static function createConsole($console_name){
