@@ -75,19 +75,28 @@ class user
         unset($db);
     }
     //Logear Usuario
+    
     public static function loginUser($email,$password){
         $pass = SHA1($password);
         $db = new sqlConnection();
         $sql = 'SELECT * FROM user';
         $sql .= " WHERE email = '".$email."' AND password = '".$pass."'";
         $result = $db->queryLogin($sql);
-        if($result == 1){
+        if($result){
+            $db->closeConnection();
+            unset($db);
+            $db = new sqlConnection();
+            $sql2 = 'SELECT id FROM user';
+            $sql2 .= " WHERE email = '".$email."' AND password = '".$pass."'";
+            $data = $db->getId($sql2);
             session_start();
-            $_SESSION["autenticado"]="si";
-            echo '<script type="text/javascript">alert("You are now Log in");';
-            header("Location: http://localhost/VideoGameCenter/index.php");
-        }else{
-            echo '<script type="text/javascript">alert("Email or password are invalid!");</script>';
+            $_SESSION["id_user"]=$data;
+            $db->closeConnection();
+            unset($db);
+            //echo '<script type="text/javascript">alert("You are now Log in");</script>';
+            header('Location: http://localhost/VideoGameCenter/index.php');
+        }else if(!$result){
+            //echo '<script type="text/javascript">alert("Email or password are invalid!");</script>';
             header("Location: http://localhost/VideoGameCenter/login-user.html");
         }
     }

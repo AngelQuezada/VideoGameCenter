@@ -15,13 +15,17 @@ class ticket{
         require_once('connection.php');
     }
     //Dar de alta un ticket
-    public static function createTicket($id_username,$videogame_name,$category_name,$console_name,$quantity,$price,$total,$date){
+    public static function createTicket($id_username,$videogame_name,$category_id,$console_id,$price){
+        $quantity=1;
+        $total = $price*$quantity;
+        $timestamp = date("Y-m-d H:i:s");
         $db = new sqlConnection();
         $sql = 'INSERT INTO ticket';
-        $sql .= " VALUES(null,'".$id_username."','".$videogame_name."','".$category_name."','".$console_name."','".$quantity."','".$price."','".$total."','".$date."');";
+        $sql .= " VALUES(null,'".$id_username."','".$videogame_name."','".$category_id."','".$console_id."','".$quantity."','".$price."','".$total."','".$timestamp."');";
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
+        header('Location: http://localhost/VideoGameCenter/index.php');
     }
     //Mostrar ticket
     public static function showTickets(){

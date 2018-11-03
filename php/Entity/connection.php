@@ -38,6 +38,14 @@ class sqlConnection
         $row_count = mysqli_num_rows($r);
         return $row_count;
     }
+    public function getId($query){
+        $data = $this->queryBuilder($query);
+       
+        while($row = mysqli_fetch_array($data)){
+            $id = $row['id'];
+         }
+         return $id;
+    }
     public function closeConnection(){
         mysqli_close($this->connection);
     }

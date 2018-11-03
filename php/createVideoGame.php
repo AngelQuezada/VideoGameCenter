@@ -27,11 +27,14 @@ if(isset($_POST['Price'])){
 if(isset($_POST['releaseDate'])){
     $releaseDate = $_POST['releaseDate'];
 }
+if(isset($_POST['Category'])){
+    $category = $_POST['Category'];
+}
 if(isset($_POST['Description'])){
     $description = $_POST['Description'];
 }
 if(isset($_POST['providerName'])){
     $providerName = $_POST['providerName'];
 }
-videogame::createVideogame($thumbnail,$company,$consoleId,$title,$price,$releaseDate,$description,$providerName);
+videogame::createVideogame($thumbnail,$company,$consoleId,$title,$price,$releaseDate,$category,$description,$providerName);
 exit;

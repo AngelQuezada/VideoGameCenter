@@ -32,44 +32,44 @@
     ?>
   <!-- Games PC -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PC</p>
-  <div class="jumbotron" style="opacity: 0.5">
+  
   <?php
         $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
         require_once($_VIDEOGAME_ROUTE_);
         $videogame = new videogame();
         echo $videogame->cardVideogamesPC();
     ?>
-  </div> <!--/jumbotron PC -->
+
   <!-- Games One -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Xbox One</p>
-  <div class="jumbotron" style="opacity: 0.5">
+ 
   <?php
         $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
         require_once($_VIDEOGAME_ROUTE_);
         $videogame = new videogame();
         echo $videogame->cardVideogamesXBXONE();
     ?>
-  </div>
+  
   <!-- Games Nintendo Switch -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Nintendo Switch</p>
-  <div class="jumbotron" style="opacity: 0.5">
+  
   <?php
         $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
         require_once($_VIDEOGAME_ROUTE_);
         $videogame = new videogame();
         echo $videogame->cardVideoGameNSwitch();
     ?>
-  </div>
+ 
   <!-- Games PS4 -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PS4</p>
-  <div class="jumbotron" style="opacity: 0.5">
+  
   <?php
         $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
         require_once($_VIDEOGAME_ROUTE_);
         $videogame = new videogame();
         echo $videogame->cardVideoGamePS4();
     ?>
-  </div>
+  <br>
   <footer>
     <p id="footer_text"><a href="login-adm.html" style="color: white; ">Admin Log</a> | VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
   </footer>

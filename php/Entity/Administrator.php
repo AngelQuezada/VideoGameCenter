@@ -76,10 +76,15 @@ class administrator{
         $db = new sqlConnection();
         $sql = 'SELECT * FROM administrator';
         $sql .= " WHERE username = '".$username."' AND password = '".$pass."'";
+        $id;
+        $data = $db->queryBuilder($sql);
+        while($row = mysqli_fetch_array($data)){
+           $id = $row['id'];
+        }
         $result = $db->queryLogin($sql);
         if($result == 1){
             session_start();
-            $_SESSION["admin"]="si";
+            $_SESSION["id"]=$id;
             echo "<script>alert('You are now Log in');</script>";
             header("Location: http://localhost/VideoGameCenter/src/pages/dashboard.php");
         }else{

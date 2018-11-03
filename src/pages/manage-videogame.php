@@ -53,6 +53,7 @@ $cant = $videogame->quantityVideogames();
                 <th>Title</th>
                 <th>Price</th>
                 <th>Release Date</th>
+                <th>Category</th>
                 <th>Description</th>
                 <th>Provider Name</th>
                 <th>Save</th>
@@ -67,6 +68,7 @@ $cant = $videogame->quantityVideogames();
                 <td><input type="text" class="form-control" placeholder="Title" name="Title"></td>
                 <td><input type="text" class="form-control" placeholder="Price" name="Price"></td>
                 <td><input type="date" class="form-control" name="releaseDate"></td>
+                <td><input type="text" class="form-control" placeholder="Category" name="Category"></td>
                 <td><input type="text" class="form-control" placeholder="Description" name="Description"></td>
                 <td><input type="text" class="form-control" placeholder="Provider Name" name="providerName"></td>
                 <th><button type="submit" class="btn btn-outline-primary">Save</button></td>
@@ -74,16 +76,23 @@ $cant = $videogame->quantityVideogames();
             </form>
         </tbody>
     </table>
-    <h2>Console & Provider Reference Table: </h2>
+    <h2>Console, Provider & Category Reference Table: </h2>
     <?php
         $_CONSOLE_ROUTE_ = "../../php/Entity/console.php";
         require_once($_CONSOLE_ROUTE_);
         $console = new console();
         echo $console->showConsoles();
+
         $_PROVIDER_ROUTE_ = "../../php/Entity/provider.php";
         require_once($_PROVIDER_ROUTE_);
         $provider = new provider();
         echo $provider->showProviders();
+        
+        $_CATEGORY_ROUTE_ = "../../php/Entity/category.php";
+        require_once($_CATEGORY_ROUTE_);
+        $category = new category();
+        echo $category->showCategories();
+
     ?>
 </div>
 </body>
