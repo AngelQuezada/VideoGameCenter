@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_VIDEOGAME_ROUTE_ = "../../php/Entity/videogame.php";
 require_once($_VIDEOGAME_ROUTE_);
 

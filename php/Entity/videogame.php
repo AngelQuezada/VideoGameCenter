@@ -51,6 +51,101 @@ class videogame{
         $db->closeConnection();
         unset($db);
     }
+    //Cards videojuegos Principal
+    public function cardVideogames(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame");
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($data)){
+            echo "<div class= col-sm-4>";
+            echo '<div class="card" id='.$row['id'].' style="width:400px">';
+            echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
+            echo '<div class="card-body">';
+            echo '<h4 class="card-title">'.$row['title'].'</h4>';
+            echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
+            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
+    //Cards videojuegos PC
+    public function cardVideogamesPC(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=10");
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($data)){
+            echo "<div class= col-sm-4>";
+            echo '<div class="card" id='.$row['id'].' style="width:400px">';
+            echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
+            echo '<div class="card-body">';
+            echo '<h4 class="card-title">'.$row['title'].'</h4>';
+            echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
+            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
+    //Cards videouegos XBOX ONE
+    public function cardVideogamesXBXONE(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=6");
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($data)){
+            echo "<div class= col-sm-4>";
+            echo '<div class="card" id='.$row['id'].' style="width:400px">';
+            echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
+            echo '<div class="card-body">';
+            echo '<h4 class="card-title">'.$row['title'].'</h4>';
+            echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
+            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
+    //Cards Nintendo Switch
+    public function cardVideoGameNSwitch(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=8");
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($data)){
+            echo "<div class= col-sm-4>";
+            echo '<div class="card" id='.$row['id'].' style="width:400px">';
+            echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
+            echo '<div class="card-body">';
+            echo '<h4 class="card-title">'.$row['title'].'</h4>';
+            echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
+            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
+    //Cards PS4
+    public function cardVideoGamePS4(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=7");
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($data)){
+            echo "<div class= col-sm-4>";
+            echo '<div class="card" id='.$row['id'].' style="width:400px">';
+            echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
+            echo '<div class="card-body">';
+            echo '<h4 class="card-title">'.$row['title'].'</h4>';
+            echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
+            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
     //Obtener cantidad de videojuegs
     public function quantityVideogames(){
         $db = new sqlConnection();

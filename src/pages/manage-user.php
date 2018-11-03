@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_USER_ROUTE_ = "../../php/Entity/user.php";
 require_once($_USER_ROUTE_);
 

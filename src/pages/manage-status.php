@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_STATUS_ROUTE_ = "../../php/Entity/status.php";
 require_once($_STATUS_ROUTE_);
 

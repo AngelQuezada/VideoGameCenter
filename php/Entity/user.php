@@ -50,6 +50,7 @@ class user
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
+        header("Location: http://localhost/VideoGameCenter/login-user.html");
     }
     //Actualiza Username
     public static function updateUsername($usernameOld,$usernameNew){

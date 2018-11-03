@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_PROVIDER_ROUTE_ = "../../php/Entity/provider.php";
 require_once($_PROVIDER_ROUTE_);
 

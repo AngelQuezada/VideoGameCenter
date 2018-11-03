@@ -1,3 +1,6 @@
+<?php
+    include ("../../validate-adm.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

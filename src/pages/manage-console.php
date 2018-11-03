@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_CONSOLE_ROUTE_ = "../../php/Entity/console.php";
 require_once($_CONSOLE_ROUTE_);
 

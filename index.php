@@ -17,87 +17,61 @@
 <body background="src/assets/background_index.png" width="50%">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="#">VideoGame Center</a>
-    <ul class="navbar-nav" style="position: relative; left: 50%;">
+    <ul class="navbar-nav" style="position: relative; left: 70%;">
       <li class="nav-item">
-          <button class="btn btn-outline-primary " id="btnCategories">Game Categories</button>
-          <button class="btn btn-outline-primary " id="btnExclusives">Exclusive</button>
           <button class="btn btn-outline-primary " onclick="logout()" id="btnLogin">Logout</button>;
       </li>
     </ul>
   </nav>
   <p style="color: white; text-align: center; font-size: 200%">Check our Games!</p>
-  <div class="row">
-    <div class="col-sm-4">
-        <div class="card" id="undertale" style="width:400px">
-            <img class="card-img-top" src="src/assets/games/undertale/undertale.png" alt="Undertale">
-            <div class="card-body">
-              <h4 class="card-title">Undertale on PC,PS4 and SWITCH</h4>
-              <p class="card-text">Undertale is a role-playing video game created by American indie developer Toby Fox. 
-                In the game, players control a human child who has fallen into the Underground, 
-                a large, secluded region underneath the surface of the Earth, separated by a magic 
-                barrier.</p>
-              <a href="#" class="btn btn-success">Buy</a>
-              <a href="#" class="btn btn-info">Details</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card" id="crash" style="width:400px;">
-            <img class="card-img-top" src="src/assets/games/crash/crash.jpg" alt="Crash">
-            <div class="card-body">
-              <h4 class="card-title">Crash Bandicoot on PS4 and PC</h4>
-              <p class="card-text">Your favorite marsupial, Crash Bandicoot®, is back! He’s enhanced, 
-                entranced & ready-to-dance with the N. Sane Trilogy game collection. Now you can 
-                experience Crash Bandicoot like never-before in Fur-K. Spin, jump, wump and repeat as you
-                 take on the epic challenges and adventures through the three games that started it all, 
-                 Crash Bandicoot®, Crash Bandicoot® 2: Cortex Strikes Back and Crash Bandicoot®: Warped. 
-                 Relive all your favorite Crash moments!.</p>
-              <a href="#" class="btn btn-success">Buy</a>
-              <a href="#" class="btn btn-info">Details</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="card" id="klonoa" style="width:400px">
-            <img class="card-img-top" src="src/assets/games/klonoa/klonoa.jpg" alt="Undertale">
-            <div class="card-body">
-              <h4 class="card-title">Klonoa on Nintendo Wii</h4>
-              <p class="card-text">Everything was going well in the land of Phantomile, an idyllic world 
-              created by the power of dreams and protected by four benign gods: the Moon God, the Water 
-              God, the Wind God and the God of Trees. But that tranquility is about to shatter due to the 
-              ise of dark forces that want to turn a dreamland into a nightmare. The brave and young 
-              warrior Klonoa will have to save the day and restore calm and harmony in Phantomile. 
-              But for this you will need your help!</p>
-              <a href="#" class="btn btn-success">Buy</a>
-              <a href="#" class="btn btn-info">Details</a>
-            </div>
-          </div>
-    </div>
-    </div> <!-- /card -->
-  </div> <!-- /row -->
-  <br/>
+  <?php
+        $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
+        require_once($_VIDEOGAME_ROUTE_);
+        $videogame = new videogame();
+        echo $videogame->cardVideogames();
+    ?>
   <!-- Games PC -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PC</p>
   <div class="jumbotron" style="opacity: 0.5">
-    dsdsdd
+  <?php
+        $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
+        require_once($_VIDEOGAME_ROUTE_);
+        $videogame = new videogame();
+        echo $videogame->cardVideogamesPC();
+    ?>
   </div> <!--/jumbotron PC -->
   <!-- Games One -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Xbox One</p>
   <div class="jumbotron" style="opacity: 0.5">
-    dsdsdd
+  <?php
+        $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
+        require_once($_VIDEOGAME_ROUTE_);
+        $videogame = new videogame();
+        echo $videogame->cardVideogamesXBXONE();
+    ?>
   </div>
   <!-- Games Nintendo Switch -->
   <p style="color: white; text-align: center; font-size: 200%">Games on Nintendo Switch</p>
   <div class="jumbotron" style="opacity: 0.5">
-    dsdsdd
+  <?php
+        $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
+        require_once($_VIDEOGAME_ROUTE_);
+        $videogame = new videogame();
+        echo $videogame->cardVideoGameNSwitch();
+    ?>
   </div>
   <!-- Games PS4 -->
   <p style="color: white; text-align: center; font-size: 200%">Games on PS4</p>
   <div class="jumbotron" style="opacity: 0.5">
-    dsdsdd
+  <?php
+        $_VIDEOGAME_ROUTE_ = "php/Entity/videogame.php";
+        require_once($_VIDEOGAME_ROUTE_);
+        $videogame = new videogame();
+        echo $videogame->cardVideoGamePS4();
+    ?>
   </div>
   <footer>
-    <p id="footer_text"><a href="login-adm.php" style="color: white; ">Admin Log</a> | VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
+    <p id="footer_text"><a href="login-adm.html" style="color: white; ">Admin Log</a> | VideoGame Center | A project by: Miguel Angel Quezada Galván < CUCEI/> Seminario de Solución de problemas de Bases de Datos.  version: 0.0.1</p>
   </footer>
 </body>
 <script>

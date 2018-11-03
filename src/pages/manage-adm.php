@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_ADMIN_ROUTE_ = "../../php/Entity/administrator.php";
 require_once($_ADMIN_ROUTE_);
 $admins = new administrator();

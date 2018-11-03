@@ -1,4 +1,5 @@
 <?php
+include ("../../validate-adm.php");
 $_CATEGORY_ROUTE_ = "../../php/Entity/category.php";
 require_once($_CATEGORY_ROUTE_);
 
