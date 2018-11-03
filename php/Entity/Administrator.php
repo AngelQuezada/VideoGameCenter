@@ -22,22 +22,54 @@ class administrator{
         unset($db);
         return $info['total'];
     }
+    public function showAdmins(){
+        $db = new sqlConnection();
+        $data = $db->queryBuilder("SELECT id,username,is_admin FROM administrator");
+        echo "<table class='table table-striped table-dark'>
+                <thead>
+                <tr class='bg-danger'>
+                <th>id</th>
+                <th>username</th>
+                <th>is Admin</th>
+                <th>Modify Admin</th>
+                </tr>
+                </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo '<form action="../../php/delegateAdmin.php" method="POST" id="formDelegateAdmin">';
+            echo "<tr>";
+            echo '<td id="id" name="id"><input type="hidden" name="id" value="'.$row['id'].'">'.$row['id']. '</td>';
+            echo "<td>".$row['username']. "</td>";
+            echo '<td id="isAdmin" name="isAdmin"><select class="custom-select mr-sm-2" id="isAdmin" name="isAdmin"><option selected>'.$row['is_admin'].'</option><option value="1">1</option><option value="0">0</option></select></td>';
+            echo '<td><button type="submit" class="btn btn-outline-warning">Save</button></td>';
+            echo "</tr>";
+            echo "</form>";
+        }
+        echo "</tbody>";
+        echo "</table>";
+        $db->closeConnection();
+        unset($db);
+    }
     //Dar de alta un nuevo admin
     public static function createAdmin($name,$lastName,$maidenName,$username,$password,$RFC,$birthdate){
         $db = new sqlConnection();
+        $pass = SHA1($password);
         $sql = 'INSERT INTO administrator';
-        $sql .= " VALUES(null,'".$name."','".$lastName."','".$maidenName."','".$username."','".$password."','".$RFC."','".$birthdate."',0);";
+        $sql .= " VALUES(null,'".$name."','".$lastName."','".$maidenName."','".$username."','".$pass."','".$RFC."','".$birthdate."',0);";
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        echo '<script>location.href=index.php</script>';
+        header("Location: http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
-    public function activateAdmin($username){
-        $db = new sqlConecction();
-        $sql = "UPDATE SET is_admin = 1";
-        $sql .= " WHERE username = '".$username."';";
-        $data = $db->queryBuilder($sql);
+    
+    public static function delegateAdmin($id,$isAdmin){
+        $db = new sqlConnection();
+        $sql = "UPDATE administrator SET is_admin = '".$isAdmin."'";
+        $sql .= " WHERE id = '".$id."';";
+        $result = $db->queryBuilder($sql);
+        $db->closeConnection();
         unset($db);
+        header("Location: http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
     public static function loginAdmin($username,$password){
         $pass = SHA1($password);

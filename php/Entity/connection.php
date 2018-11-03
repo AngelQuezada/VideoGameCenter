@@ -16,15 +16,16 @@ class sqlConnection
             printf("There was an error to connect to the Database: %d", mysqli_connect_error());
             exit;
         }else{
-            //The Connection Has Been Successfuly
         }
     }
     public function queryBuilder($query){
-        //var_dump($query);
+        // var_dump($query);
+        // die;
         $r=mysqli_query($this->connection, $query);
-        if (!$query)
+        if (!$r)
         {
-            print_r(mysqli_error_list($this->connection));
+            var_dump(mysqli_error_list($this->connection));
+            die;
         }
         return $r;
     }
@@ -32,15 +33,11 @@ class sqlConnection
         //var_dump($query);
         $r=mysqli_query($this->connection, $query);
         if(!$r){
-            //var_dump($r);
-            //die;
             return $r;
-            //exit;
         }
         $row_count = mysqli_num_rows($r);
         return $row_count;
     }
-    
     public function closeConnection(){
         mysqli_close($this->connection);
     }

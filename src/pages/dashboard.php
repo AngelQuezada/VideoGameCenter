@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <title>Admin-Dashboard</title>
 </head>
-<body>
+<body background="../../src/assets/background_index.png">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="#">VideoGame Center | DASHBOARD</a>
     <ul class="navbar-nav">
@@ -20,7 +20,7 @@
       </li>
     </ul>
   </nav>
-<div class="container">
+<div class="container" style="opacity: 0.8">
   <div class="row">
     <div class="col-sm">
         <div class="card" id="admin" style="width:200px">
@@ -37,7 +37,7 @@
             <img class="card-img-top" src="">
             <div class="card-body">
               <h4 class="card-title">Videogames</h4>
-              <p class="card-text">Add/Quit Videogames</p>
+              <p class="card-text">Add/View Videogames</p>
               <button class="btn btn-success" style="display: block" onclick="manageVideogame()">Manage Videogames</button>
             </div>
         </div><!-- card -->
@@ -47,7 +47,7 @@
             <img class="card-img-top" src="">
             <div class="card-body">
               <h4 class="card-title">Consoles</h4>
-              <p class="card-text">Add/Quit Console</p>
+              <p class="card-text">View Consoles</p>
               <button class="btn btn-success" style="display: block" onclick="manageConsole()">Manage Consoles</button>
             </div>
         </div><!-- card -->
@@ -57,7 +57,7 @@
             <img class="card-img-top" src="">
             <div class="card-body">
               <h4 class="card-title">Categories</h4>
-              <p class="card-text">Add/Quit Category</p>
+              <p class="card-text">View Categories</p>
               <button class="btn btn-success" style="display: block" onclick="manageCategory()">Manage Categories</button>
             </div>
         </div><!-- card -->
@@ -67,7 +67,7 @@
             <img class="card-img-top" src="">
             <div class="card-body">
               <h4 class="card-title">Providers</h4>
-              <p class="card-text">Add/Quit Provider</p>
+              <p class="card-text">Add/View Provider</p>
               <button class="btn btn-success" style="display: block" onclick="manageProvider()">Manage Providers</button>
             </div>
         </div><!-- card -->

@@ -4,17 +4,31 @@ require_once('connection.php');
 class console{
     private $console_name;
 
-    function __construct($console_name){
+    function __construct(){
         require_once('connection.php');
-        $this->console_name=$console_name;
     }
     //Obtener todas las consolas
-    public function consoles(){
+    public function showConsoles(){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM console");
+        echo "<table class='table table-striped table-dark'>
+                <thead>
+                <tr class='bg-danger'>
+                <th>id</th>
+                <th>Console Name</th>
+                </tr>
+                </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>" .$row['id']. "</td>";
+            echo "<td>" .$row['console_name']. "</td>";
+            echo "</tr>";
+        }
+        echo "</body>";
+        echo "</table>";
         $db->closeConnection();
         unset($db);
-        return $data;
     }
     //Obtener cantidad de consolas
     public function quantityConsoles(){

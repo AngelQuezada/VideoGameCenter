@@ -27,9 +27,37 @@ class ticket{
     public static function showTickets(){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM ticket");
-        $info = mysqli_fetch_array($data);
+        echo "<table class='table table-striped table-dark'>
+                <thead>
+                <tr class='bg-danger'>
+                <th>id</th>
+                <th>id Username</th>
+                <th>videogame name</th>
+                <th>category name</th>
+                <th>console name</th>
+                <th>quantity</th>
+                <th>price</th>
+                <th>total</th>
+                <th>date</th>
+                </tr>
+                </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>".$row['id']. "</td>";
+            echo "<td>".$row['id_username']. "</td>";
+            echo "<td>".$row['videogame_name']. "</td>";
+            echo "<td>".$row['category_name']. "</td>";
+            echo "<td>".$row['console_name']. "</td>";
+            echo "<td>".$row['quantity']. "</td>";
+            echo "<td>".$row['price']. "</td>";
+            echo "<td>".$row['total']. "</td>";
+            echo "<td>".$row['date']. "</td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
         $db->closeConnection();
         unset($db);
-        return $info;
     }
 }

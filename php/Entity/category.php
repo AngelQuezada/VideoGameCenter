@@ -4,17 +4,31 @@ require_once('connection.php');
 class category{
     private $category_name;
 
-    function __construct($category_name){
+    function __construct(){
         require_once('connection.php');
-        $this->category_name = $category_name;
     }
     //Obtener todas las categorias
-    public function categories(){
+    public function showCategories(){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM category");
+        echo "<table class='table table-striped table-dark'>
+                <thead>
+                <tr class='bg-danger'>
+                <th>id</th>
+                <th>Category Name</th>
+                </tr>
+                </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>".$row['id']. "</td>";
+            echo "<td>".$row['category_name']. "</td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
         $db->closeConnection();
         unset($db);
-        return $data;
     }
     //Obtener cantidad de categorias
     public function quantityCategories(){

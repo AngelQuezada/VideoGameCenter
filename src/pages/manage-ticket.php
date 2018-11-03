@@ -8,43 +8,18 @@
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <title>Manage Tickets</title>
 </head>
-<body style="background: gray">
-<div class="jumbotron" style="text-align: center;width: 70%;margin-left: 15%;margin-right: 35%;margin-bottom: 0px;">
-<p>Table of Tickets</p>
+<body background="../../src/assets/background_index.png">
+<div class="jumbotron" style="text-align: center;width: 70%;margin-left: 15%;margin-right: 35%;margin-bottom: 0px; opacity: 0.8;">
+<h2>Table of Tickets</h2>
 <?php
-    echo "<table border='1'>
-    <tr>
-    <th>id</th>
-    <th>id Username</th>
-    <th>videogame name</th>
-    <th>category name</th>
-    <th>console name</th>
-    <th>quantity</th>
-    <th>price</th>
-    <th>total</th>
-    <th>date</th>
-    ";
     $_TICKET_ROUTE_ = "../../php/Entity/ticket.php";
     require_once($_TICKET_ROUTE_);
     $ticket = new ticket();
-    $row = $ticket->showTickets();
-    echo "<tr>";
-    echo "<td>".$row['id']. "</td>";
-    echo "<td>".$row['id_username']. "</td>";
-    echo "<td>".$row['videogame_name']. "</td>";
-    echo "<td>".$row['category_name']. "</td>";
-    echo "<td>".$row['console_name']. "</td>";
-    echo "<td>".$row['quantity']. "</td>";
-    echo "<td>".$row['price']. "</td>";
-    echo "<td>".$row['total']. "</td>";
-    echo "<td>".$row['date']. "</td>";
-    echo "</tr>";
-    echo "</table>";
+    echo $ticket->showTickets();
 ?>
 <br>
 <button class="btn btn-danger" onclick="dashboard()">Return to DASHBOARD</button>
 </div>
-    
 </body>
 <script>
     function dashboard(){

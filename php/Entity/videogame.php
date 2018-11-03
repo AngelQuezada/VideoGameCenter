@@ -15,12 +15,41 @@ class videogame{
         require_once('connection.php');
     }
      //Obtener todos los videojuegos
-     public function videogames(){
+     public function showVideogames(){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM videogame");
+        echo "<table class='table table-striped table-dark'>
+              <thead>
+              <tr class='bg-danger'>
+              <th>id</th>
+              <th>Thumbnail</th>
+              <th>Company</th>
+              <th>Console id</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Release Date</th>
+              <th>Description</th>
+              <th>Provider Name</th>
+              </tr>
+              </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>".$row['id']. "</td>";
+            echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']). '" style="width: 70%"/></td>';
+            echo "<td>".$row['company']. "</td>";
+            echo "<td>".$row['console_id']. "</td>";
+            echo "<td>".$row['title']. "</td>";
+            echo "<td>".$row['price']. "</td>";
+            echo "<td>".$row['release_date']. "</td>";
+            echo "<td>".$row['description']. "</td>";
+            echo "<td>".$row['provider_name']. "</td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
         $db->closeConnection();
         unset($db);
-        return $data;
     }
     //Obtener cantidad de videojuegs
     public function quantityVideogames(){
@@ -41,6 +70,7 @@ class videogame{
         unset($db);
         return $data;
     }
+    //Insertar videojuego
     public static function createVideogame($thumbnail,$company,$console_name,$title,$price,$release_date,$description,$provider_name){
         $db = new sqlConnection();
         $sql = 'INSERT INTO videogame';
@@ -48,5 +78,6 @@ class videogame{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
+        header("Location: http://localhost/VideoGameCenter/src/pages/manage-videogame.php");
     }
 }

@@ -15,7 +15,7 @@ $cant = $bo->quantityBranchOffices();
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <title>Manage Branch Office</title>
 </head>
-<body style="background: gray">
+<body background="../../src/assets/background_index.png">
 <div class="container">
   <div class="row">
     <div class="col-sm">
