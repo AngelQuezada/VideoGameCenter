@@ -50,7 +50,10 @@ class user
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/login-user.html");
+        echo '<script language="javascript">';
+        echo 'window.alert("The password has been updated successfuly!")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/login-user.html");
     }
     //Actualiza Username
     public static function updateUsername($usernameOld,$usernameNew){
@@ -58,10 +61,12 @@ class user
         $sql = 'UPDATE user';
         $sql .= " SET username = '".$usernameNew."' WHERE username = '".$usernameOld."'";
         $result = $db->queryBuilder($sql);
-        echo "<script>alert('Username has been updated successfuly!');</script>";
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-user.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The username has been updated successfuly!")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-user.php");
     }
     //Registrar un nuevo Usuario
     public static function createUser($username,$email,$password,$address,$houseNumber,$cp,$city,$name,$lastName,$maidenName){
@@ -70,7 +75,10 @@ class user
         $sql =  'INSERT INTO user';
         $sql .= " VALUES(null,'".$username."','".$email."','".$pass."','".$address."','".$houseNumber."','".$cp."','".$city."','".$name."','".$lastName."','".$maidenName."');";
         $result = $db->queryBuilder($sql);
-        echo "<script>alert('User has been created successfuly!');</script>";
+        echo '<script language="javascript">';
+        echo 'window.alert("The register has been completed successfuly!")';
+        echo '</script>';
+        header('Refresh:0; url=http://localhost/VideoGameCenter/login-user.html');
         $db->closeConnection();
         unset($db);
     }
@@ -93,11 +101,15 @@ class user
             $_SESSION["id_user"]=$data;
             $db->closeConnection();
             unset($db);
-            //echo '<script type="text/javascript">alert("You are now Log in");</script>';
-            header('Location: http://localhost/VideoGameCenter/index.php');
+            echo '<script language="javascript">';
+            echo 'window.alert("Welcome you are now log in")';
+            echo '</script>';
+            header('Refresh:0; url=http://localhost/VideoGameCenter/index.php');
         }else if(!$result){
-            //echo '<script type="text/javascript">alert("Email or password are invalid!");</script>';
-            header("Location: http://localhost/VideoGameCenter/login-user.html");
+            echo '<script language="javascript">';
+            echo 'window.alert("Email or Password are wrong!")';
+            echo '</script>';
+            header("Refresh:0; url=http://localhost/VideoGameCenter/login-user.html");
         }
     }
 }

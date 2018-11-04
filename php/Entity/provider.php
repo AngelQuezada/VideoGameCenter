@@ -53,6 +53,9 @@ class provider{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-provider.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The provider has been created successfuly!")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-provider.php");
     }
 }

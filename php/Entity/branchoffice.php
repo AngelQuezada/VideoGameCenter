@@ -34,6 +34,9 @@ class branchoffice{
         echo "<script>alert('BO has been created successfuly!');</script>";
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-bo.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The Branch Office has been created successfuly!")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-bo.php");
     }
 }

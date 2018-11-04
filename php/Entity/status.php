@@ -47,7 +47,10 @@ class status{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-status.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The purchase has been completed")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-status.php");
     }
     //Obtener cantidad de status
     public function quantityStatus(){
@@ -64,6 +67,32 @@ class status{
         $sql = 'INSERT INTO status';
         $sql .= " VALUES(null,'".$id_ticket."','".$date_ticket."','".$status."')";
         $result = $db->queryBuilder($sql);
+        $db->closeConnection();
+        unset($db);
+    }
+    //Mostrar status del usuario activo
+    public static function showStatusOfUser(){
+        $db = new sqlConnection();
+        $id=$_SESSION['id_user'];
+        $sql = 'SELECT date_ticket,status FROM status';
+        $sql .= " WHERE id_user = '".$id."'";
+        $data = $db->queryBuilder($sql);
+        echo "<table class='table table-striped table-dark'>
+                <thead>
+                <tr class='bg-danger'>
+                <th>Date Ticket</th>
+                <th>Status</th>
+                </tr>
+                </thead>";
+        while($row = mysqli_fetch_array($data)){
+            echo "<tbody>";
+            echo "<td>".$row['date_ticket']. "</td>";
+            echo "<td>".$row['status']. "</td>";
+            echo "</tr>";
+            echo "</form>";
+        }
+        echo "</tbody>";
+        echo "</table>";
         $db->closeConnection();
         unset($db);
     }

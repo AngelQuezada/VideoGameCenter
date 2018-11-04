@@ -59,7 +59,10 @@ class administrator{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-adm.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The Administrator has been created successfuly!")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
     
     public static function delegateAdmin($id,$isAdmin){
@@ -69,7 +72,10 @@ class administrator{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-adm.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The Admin has been modified successfuly")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
     public static function loginAdmin($username,$password){
         $pass = SHA1($password);
@@ -85,11 +91,15 @@ class administrator{
         if($result == 1){
             session_start();
             $_SESSION["id"]=$id;
-            echo "<script>alert('You are now Log in');</script>";
-            header("Location: http://localhost/VideoGameCenter/src/pages/dashboard.php");
+            echo '<script language="javascript">';
+            echo 'window.alert("Your are now Log in")';
+            echo '</script>';
+            header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/dashboard.php");
         }else{
-            echo "<script>alert('User or password are invalid!');</script>";
-            header("Location: http://localhost/VideoGameCenter/login-adm.html");
+            echo '<script language="javascript">';
+            echo 'window.alert("User or Password are invalid!")';
+            echo '</script>';
+            header("Refresh:0; url=http://localhost/VideoGameCenter/login-adm.html");
         }
     }
 }

@@ -57,16 +57,14 @@ class videogame{
     public function cardVideogames(){
         $db = new sqlConnection();
         $data = $db->queryBuilder("SELECT * FROM videogame LIMIT 3");
-        echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
         echo '<div class="row">';
         while($row = mysqli_fetch_array($data)){
-            echo '<input type="hidden" name="id" value="'.$row['id'].'">';
+            echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
             echo '<input type="hidden" name="id_user" value="'.$_SESSION['id_user'].'">';
-            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
             echo '<input type="hidden" name="title" value="'.$row['title'].'">';
             echo '<input type="hidden" name="category" value="'.$row['category'].'">';
+            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
             echo '<input type="hidden" name="price" value="'.$row['price'].'">';
-
             echo '<div class="col-sm-4">';
             echo '<div class="card" id='.$row['id'].' style="width:400px">';
             echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
@@ -74,86 +72,120 @@ class videogame{
             echo '<h4 class="card-title">'.$row['title'].'</h4>';
             echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
             echo '<button class="btn btn-success" type="submit">Buy</button>';
+            echo '<input type="text" name="quantity" placeholder="Quantity" value=1>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "</form>";
         }
         echo "</div>";
-        echo "</form>";
     }
     //Cards videojuegos PC
     public function cardVideogamesPC(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=10");
+        $data = $db->queryBuilder("SELECT * FROM videogame WHERE console_id=10");
         echo '<div class="row">';
         while($row = mysqli_fetch_array($data)){
+            echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
+            echo '<input type="hidden" name="id_user" value="'.$_SESSION['id_user'].'">';
+            echo '<input type="hidden" name="title" value="'.$row['title'].'">';
+            echo '<input type="hidden" name="category" value="'.$row['category'].'">';
+            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
+            echo '<input type="hidden" name="price" value="'.$row['price'].'">';
             echo "<div class= col-sm-4>";
             echo '<div class="card" id='.$row['id'].' style="width:400px">';
             echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
             echo '<div class="card-body">';
             echo '<h4 class="card-title">'.$row['title'].'</h4>';
             echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
-            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo '<button class="btn btn-success" type="submit">Buy</button>';
+            echo '<input type="text" name="quantity" placeholder="Quantity" value=1>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "</form>";
         }
         echo "</div>";
     }
     //Cards videouegos XBOX ONE
     public function cardVideogamesXBXONE(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=6");
+        $data = $db->queryBuilder("SELECT * FROM videogame WHERE console_id=6");
         echo '<div class="row">';
         while($row = mysqli_fetch_array($data)){
+            echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
+            echo '<input type="hidden" name="id_user" value="'.$_SESSION['id_user'].'">';
+            echo '<input type="hidden" name="title" value="'.$row['title'].'">';
+            echo '<input type="hidden" name="category" value="'.$row['category'].'">';
+            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
+            echo '<input type="hidden" name="price" value="'.$row['price'].'">';
             echo "<div class= col-sm-4>";
             echo '<div class="card" id='.$row['id'].' style="width:400px">';
             echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
             echo '<div class="card-body">';
             echo '<h4 class="card-title">'.$row['title'].'</h4>';
             echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
-            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo '<button class="btn btn-success" type="submit">Buy</button>';
+            echo '<input type="text" name="quantity" placeholder="Quantity" value=1>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "</form>";
         }
         echo "</div>";
     }
     //Cards Nintendo Switch
     public function cardVideoGameNSwitch(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=8");
+        $data = $db->queryBuilder("SELECT * FROM videogame WHERE console_id=8");
         echo '<div class="row">';
         while($row = mysqli_fetch_array($data)){
+            echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
+            echo '<input type="hidden" name="id_user" value="'.$_SESSION['id_user'].'">';
+            echo '<input type="hidden" name="title" value="'.$row['title'].'">';
+            echo '<input type="hidden" name="category" value="'.$row['category'].'">';
+            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
+            echo '<input type="hidden" name="price" value="'.$row['price'].'">';
             echo "<div class= col-sm-4>";
             echo '<div class="card" id='.$row['id'].' style="width:400px">';
             echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
             echo '<div class="card-body">';
             echo '<h4 class="card-title">'.$row['title'].'</h4>';
             echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
-            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo '<button class="btn btn-success" type="submit">Buy</button>';
+            echo '<input type="text" name="quantity" placeholder="Quantity" value=1>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "</form>";
         }
         echo "</div>";
     }
     //Cards PS4
     public function cardVideoGamePS4(){
         $db = new sqlConnection();
-        $data = $db->queryBuilder("SELECT id,thumbnail,company,title,price,release_date,description FROM videogame WHERE console_id=7");
+        $data = $db->queryBuilder("SELECT * FROM videogame WHERE console_id=7");
         echo '<div class="row">';
         while($row = mysqli_fetch_array($data)){
+            echo '<form action="php/buyVideogame.php" method="POST" id="formCreateVideogame">';
+            echo '<input type="hidden" name="id_user" value="'.$_SESSION['id_user'].'">';
+            echo '<input type="hidden" name="title" value="'.$row['title'].'">';
+            echo '<input type="hidden" name="category" value="'.$row['category'].'">';
+            echo '<input type="hidden" name="console_id" value="'.$row['console_id'].'">';
+            echo '<input type="hidden" name="price" value="'.$row['price'].'">';
+            
             echo "<div class= col-sm-4>";
             echo '<div class="card" id='.$row['id'].' style="width:400px">';
             echo '<img class="card-img-top" src="data:image/jpeg;base64,'.base64_encode($row['thumbnail']).'" style="width: 100%" >';
             echo '<div class="card-body">';
             echo '<h4 class="card-title">'.$row['title'].'</h4>';
             echo '<p class="card-text">'.$row['description'].' Company: '.$row['company'].' Release Date: '.$row['release_date'].' Price: $'.$row['price'].'</p>';
-            echo '<a href="#"  class="btn btn-success">Buy</a>';
+            echo '<button class="btn btn-success" type="submit">Buy</button>';
+            echo '<input type="text" name="quantity" placeholder="Quantity" value=1>';
             echo "</div>";
             echo "</div>";
             echo "</div>";
+            echo "</form>";
         }
         echo "</div>";
     }
@@ -184,6 +216,9 @@ class videogame{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-videogame.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The videogame has been created")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-videogame.php");
     }
 }

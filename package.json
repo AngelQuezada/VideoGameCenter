@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AngelQuezada/VideoGameCenter#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
+    "bootstrap": "^4.0.0-alpha.6",
     "bulma-start": "0.0.2",
     "materialize-css": "^1.0.0-rc.2"
   },

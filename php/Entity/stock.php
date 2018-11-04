@@ -46,7 +46,10 @@ class stock{
         $result = $db->queryBuilder($sql);
         $db->closeConnection();
         unset($db);
-        header("Location: http://localhost/VideoGameCenter/src/pages/manage-stock.php");
+        echo '<script language="javascript">';
+        echo 'window.alert("The stock has been modified successfuly")';
+        echo '</script>';
+        header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-stock.php");
     }
     //Obtener cantidad de stock
     public function quantityStock(){
