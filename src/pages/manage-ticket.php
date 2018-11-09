@@ -9,11 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../libs/css/fonts.css">
     <title>Manage Tickets</title>
 </head>
 <body background="../../src/assets/background_index.png">
 <div class="jumbotron" style="text-align: center;width: 70%;margin-left: 15%;margin-right: 35%;margin-bottom: 0px; opacity: 0.8;">
 <h2>Table of Tickets</h2>
+<button class="btn btn-danger" onclick="dashboard()">Return to DASHBOARD</button>
 <?php
     $_TICKET_ROUTE_ = "../../php/Entity/ticket.php";
     require_once($_TICKET_ROUTE_);
@@ -21,7 +23,6 @@
     echo $ticket->showTickets();
 ?>
 <br>
-<button class="btn btn-danger" onclick="dashboard()">Return to DASHBOARD</button>
 </div>
 </body>
 <script>

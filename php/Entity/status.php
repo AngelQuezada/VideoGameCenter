@@ -40,7 +40,7 @@ class status{
         unset($db);
     }
     //Actualizar Status
-    public function updateStatus($id,$status){
+    public static function updateStatus($id,$status){
         $db = new sqlConnection();
         $sql = 'UPDATE status';
         $sql .= " SET status = '".$status."' WHERE id = '".$id."'";
@@ -48,7 +48,7 @@ class status{
         $db->closeConnection();
         unset($db);
         echo '<script language="javascript">';
-        echo 'window.alert("The purchase has been completed")';
+        echo 'window.alert("The update has been completed successfuly!")';
         echo '</script>';
         header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-status.php");
     }

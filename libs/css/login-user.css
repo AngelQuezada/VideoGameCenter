@@ -47,7 +47,6 @@ footer{
     left: 9%;
     display: block;
     background-color: rgba(8, 45, 255, 0.144);
-    position: absolute;
     bottom: 1%;
 }
 p#footer_text{

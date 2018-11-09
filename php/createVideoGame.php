@@ -4,13 +4,7 @@ require_once('Entity/videogame.php');
 if(is_uploaded_file($_FILES['Thumbnail']['tmp_name'])==false){
     exit;
 }else{
-    // $thumbnail = addslashes($_FILES['Thumbnail']['tmp_name']);
-    // $name = addslashes($_FILES['Thumbnail']['tmp_name']);
-    // $thumbnail = file_get_contents($thumbnail);
-    // $thumbnail = base64_encode($thumbnail);
-    $thumbnail =addslashes (file_get_contents($_FILES['Thumbnail']['tmp_name']));
-    var_dump($thumbnail);
-    //die;
+    $thumbnail = addslashes (file_get_contents($_FILES['Thumbnail']['tmp_name']));
 }
 if(isset($_POST['Company'])){
     $company = $_POST['Company'];
