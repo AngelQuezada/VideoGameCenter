@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 04-11-2018 a las 22:13:02
+-- Tiempo de generación: 19-11-2018 a las 14:28:46
 -- Versión del servidor: 5.7.21
--- Versión de PHP: 7.2.4
+-- Versión de PHP: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `videogamecenter`
 --
+CREATE DATABASE IF NOT EXISTS `videogamecenter` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `videogamecenter`;
 
 -- --------------------------------------------------------
 
@@ -40,14 +42,16 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `birthdate` datetime NOT NULL,
   `is_admin` char(1) COLLATE utf8_spanish_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `administrator`
 --
 
 INSERT INTO `administrator` (`id`, `name`, `last_name`, `maiden_name`, `username`, `password`, `RFC`, `birthdate`, `is_admin`) VALUES
-(3, 'Miguel Angel', 'Quezada', 'Galvan', 'azzy', '70de095136c2f5fd653d6e2f1e4728c053f0c43a', 'RFC123', '1995-01-11 00:00:00', '1');
+(3, 'Miguel Angel', 'Quezada', 'Galvan', 'azzy', '70de095136c2f5fd653d6e2f1e4728c053f0c43a', 'RFC123', '1995-01-11 00:00:00', '1'),
+(4, 'Test2', 'Test2Last', 'Test2Maid', 'testing', '7288edd0fc3ffcbe93a0cf06e3568e28521687bc', 'RFC123456', '1995-01-11 00:00:00', '1'),
+(5, 'Angel', 'Quezada', 'Galvan', 'angel01', 'edf360b3f9f25e1b43f3777db55c002035dcfe5c', 'RFC123ABC', '1995-01-11 00:00:00', '1');
 
 -- --------------------------------------------------------
 
@@ -61,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `branchoffice` (
   `branchoffice_name` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `branchoffice`
@@ -72,7 +76,8 @@ INSERT INTO `branchoffice` (`id`, `branchoffice_name`, `address`) VALUES
 (2, 'GameUniverse', 'Plaza Mulbar Zona Centro GDL'),
 (3, 'VideoGameCenter', 'Plaza Forum Tlaquepaque'),
 (4, 'Center of Games', 'Marco Escalante 2155'),
-(5, 'Trick of Game', 'Apolonio Avalos 7455');
+(5, 'Trick of Game', 'Apolonio Avalos 7455'),
+(6, 'The Gaming Central Place', 'Manuel A. Dominguez');
 
 -- --------------------------------------------------------
 
@@ -171,14 +176,14 @@ CREATE TABLE IF NOT EXISTS `status` (
   KEY `id_ticket` (`id_ticket`),
   KEY `date_ticket` (`date_ticket`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `status`
 --
 
 INSERT INTO `status` (`id`, `id_ticket`, `id_user`, `date_ticket`, `status`) VALUES
-(3, 31, 23, '2018-11-04 16:28:16', 'Procesar'),
+(3, 31, 23, '2018-11-04 16:28:16', 'Enviado'),
 (4, 32, 23, '2018-11-04 16:28:21', 'Procesar'),
 (5, 33, 23, '2018-11-04 16:30:33', 'Procesar'),
 (6, 34, 23, '2018-11-04 16:30:50', 'Procesar'),
@@ -193,7 +198,9 @@ INSERT INTO `status` (`id`, `id_ticket`, `id_user`, `date_ticket`, `status`) VAL
 (15, 43, 23, '2018-11-04 16:38:42', 'Procesar'),
 (16, 44, 28, '2018-11-04 19:12:18', 'Procesar'),
 (17, 45, 29, '2018-11-04 20:11:11', 'Recibido'),
-(18, 46, 29, '2018-11-04 20:11:43', 'Enviado');
+(18, 46, 29, '2018-11-04 20:11:43', 'Enviado'),
+(19, 47, 23, '2018-11-09 21:36:15', 'Recibido'),
+(20, 48, 30, '2018-11-15 21:35:29', 'Enviado');
 
 -- --------------------------------------------------------
 
@@ -215,8 +222,7 @@ CREATE TABLE IF NOT EXISTS `stock` (
 --
 
 INSERT INTO `stock` (`id_videogame`, `id_console`, `stock`) VALUES
-(4, 7, 202),
-(5, 10, 151);
+(14, 10, 100);
 
 -- --------------------------------------------------------
 
@@ -242,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   KEY `console_name` (`console_id`),
   KEY `date` (`date`),
   KEY `price` (`price`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `ticket`
@@ -292,7 +298,10 @@ INSERT INTO `ticket` (`id`, `id_username`, `videogame_name`, `category_id`, `con
 (43, 23, 'Crash Bandicoot N. Sane Trilogy', 4, 7, 1, '990.00', '1003.50', '2018-11-04 16:38:42'),
 (44, 28, 'Halo 5 Guardians', 2, 6, 1, '700.00', '713.50', '2018-11-04 19:12:18'),
 (45, 29, 'Age of Empires 2 HD Edition', 7, 10, 1, '110.00', '123.50', '2018-11-04 20:11:11'),
-(46, 29, 'Super Mario Odyssey', 4, 8, 1, '1250.00', '1263.50', '2018-11-04 20:11:43');
+(46, 29, 'Super Mario Odyssey', 4, 8, 1, '1250.00', '1263.50', '2018-11-04 20:11:43'),
+(47, 23, 'Splatoon 2', 5, 8, 3, '1140.00', '3433.50', '2018-11-09 21:36:15'),
+(48, 30, 'Undertale', 1, 10, 1, '110.00', '123.50', '2018-11-15 21:35:29'),
+(49, 23, 'Undertale', 1, 10, 1, '110.00', '123.50', '2018-11-18 09:18:37');
 
 -- --------------------------------------------------------
 
@@ -314,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_name` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `maiden_name` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `user`
@@ -327,7 +336,9 @@ INSERT INTO `user` (`id`, `username`, `email`, `password`, `address`, `house_num
 (26, 'danna95', 'danna95@gmail.com', '4d1f11313f0c1b279e951cddef19a68400f6d6e3', 'Pera', 745, 44790, 'Guadalajara', 'Danna Marlenne', 'Valdez', 'Cruz'),
 (27, 'gordillo', 'gordillo@cnte.com', '467b516b5f1da614d37065dd0eabbe7230a743c4', 'Av Mexico', 459, 33580, 'CDMX', 'Elba Esther', 'Gordillo', 'Gordillo'),
 (28, 'tester', 'test@test.com', '7288edd0fc3ffcbe93a0cf06e3568e28521687bc', 'Calle test', 45200, 44760, 'Guadalajara', 'Test', 'Test', 'Test'),
-(29, 'peje', 'peje@gmail.com', 'd07acf6d14d46c037b533488ac5e6e9ee7586106', 'Rancho La Chin', 1, 78520, 'Villahermosa', 'Andres Manuel', 'Lopez', 'Obrador');
+(29, 'peje', 'peje@gmail.com', 'd07acf6d14d46c037b533488ac5e6e9ee7586106', 'Rancho La Chin', 1, 78520, 'Villahermosa', 'Andres Manuel', 'Lopez', 'Obrador'),
+(30, 'test', 'test@test.com', '7288edd0fc3ffcbe93a0cf06e3568e28521687bc', 'Test', 2177, 44760, 'Guadalajara', 'Test', 'Test2', 'Test3'),
+(31, 'angel0101', 'angel1995@outlook.com', 'e99a3313255c6a856a502fd7dbb38ccd7aa3d312', 'calle2', 48, 44780, 'Zapopan', 'Alberto', 'Alvarez', 'Gonzales');
 
 -- --------------------------------------------------------
 

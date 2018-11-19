@@ -24,7 +24,7 @@ class status{
                 </thead>";
         while($row = mysqli_fetch_array($data)){
             echo "<tbody>";
-            echo '<form action="../../php/updateStatus" method="POST" id="formUpdateStatus">';
+            echo '<form action="../../php/updateStatus.php" method="POST" id="formUpdateStatus">';
             echo "<tr>";
             echo '<td id="id" name="id"><input type="hidden" name="id" value="'.$row['id'].'">'.$row['id'].'</td>';
             echo "<td>".$row['id_ticket']. "</td>";

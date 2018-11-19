@@ -24,7 +24,7 @@ class stock{
                 </thead>";
         while($row = mysqli_fetch_array($data)){
             echo "<tbody>";
-            echo '<form action="../../php/updateStock" method="POST" id="formUpdateStock">';
+            echo '<form action="../../php/updateStock.php" method="POST" id="formUpdateStock">';
             echo "<tr>";
             echo '<td id="idVideogame" name="idVideogame"><input type="hidden" name="idVideogame" value="'.$row['id_videogame'].'">'.$row['id_videogame']. '</td>';
             echo "<td>".$row['id_console']. "</td>";
