@@ -59,7 +59,7 @@ $cant = $admins->admins();
             </tr>
         </thead>
         <tbody>
-            <form action="../../php/createAdmin.php" method="POST" id="formCreateAdmin">
+            <form action="../../php/createAdmin.php" method="POST" id="formCreateAdmin" autocomplete="off">
             <tr>
                 <td><input type="text" class="form-control" placeholder="Name" name="name"></td>
                 <td><input type="text" class="form-control" placeholder="Last Name" name="lastName"></td>

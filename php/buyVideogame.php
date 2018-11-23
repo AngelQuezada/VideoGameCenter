@@ -1,10 +1,6 @@
 <?php
 require_once('Entity/ticket.php');
 
-// if(isset($_POST['id'])){
-//     $id = $_POST['id'];
-// }
-
 if(isset($_POST['id_user'])){
     $idUser = $_POST['id_user'];
 }

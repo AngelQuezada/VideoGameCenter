@@ -18,9 +18,8 @@ class sqlConnection
         }else{
         }
     }
+    //Funcion Generar query
     public function queryBuilder($query){
-        // var_dump($query);
-        // die;
         $r=mysqli_query($this->connection, $query);
         if (!$r)
         {
@@ -29,8 +28,8 @@ class sqlConnection
         }
         return $r;
     }
+    //Funcion retorna bool si existe user
     public function queryLogin($query){
-        //var_dump($query);
         $r=mysqli_query($this->connection, $query);
         if(!$r){
             return $r;
@@ -38,6 +37,7 @@ class sqlConnection
         $row_count = mysqli_num_rows($r);
         return $row_count;
     }
+    //Obtener id
     public function getId($query){
         $data = $this->queryBuilder($query);
        
@@ -46,6 +46,7 @@ class sqlConnection
          }
          return $id;
     }
+    //Cerrar conexion
     public function closeConnection(){
         mysqli_close($this->connection);
     }

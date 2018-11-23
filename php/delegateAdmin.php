@@ -7,8 +7,6 @@ if(isset($_POST['id'])){
 if(isset($_POST['isAdmin'])){
     $isAdmin = $_POST['isAdmin'];
 }
-// var_dump($id);
-// var_dump($isAdmin);
-// die;
+
 administrator::delegateAdmin($id,$isAdmin);
 exit;

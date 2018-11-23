@@ -64,7 +64,7 @@ class administrator{
         echo '</script>';
         header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
-    
+    //Delegar un Admin
     public static function delegateAdmin($id,$isAdmin){
         $db = new sqlConnection();
         $sql = "UPDATE administrator SET is_admin = '".$isAdmin."'";
@@ -77,6 +77,7 @@ class administrator{
         echo '</script>';
         header("Refresh:0; url=http://localhost/VideoGameCenter/src/pages/manage-adm.php");
     }
+    //Logear Admin
     public static function loginAdmin($username,$password){
         $pass = SHA1($password);
         $db = new sqlConnection();

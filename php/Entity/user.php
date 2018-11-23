@@ -14,7 +14,6 @@ class user
     private $maidenName;
 
     public function __construct(){
-        //$conn = "../include/connection.php";
         require_once('connection.php');
     }
     //Obtener cantidad de usuarios registrados
@@ -29,7 +28,6 @@ class user
         } catch(Excepcion $e){
             $error = $e->getMessage();
         }
-       
     }
     //Buscar un usuario por  correo registrado
     public static function searchUserByEmail($email){
@@ -41,8 +39,6 @@ class user
     }
     //Actualiza Password
     public static function updatePassword($email,$password){
-        // var_dump($email);
-        // var_dump($password);
         $pass = SHA1($password);
         $db = new sqlConnection();
         $sql = 'UPDATE user';
@@ -83,7 +79,6 @@ class user
         unset($db);
     }
     //Logear Usuario
-    
     public static function loginUser($email,$password){
         $pass = SHA1($password);
         $db = new sqlConnection();

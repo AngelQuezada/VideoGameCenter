@@ -53,7 +53,7 @@ $cant = $provider->quantityProviders();
             </tr>
         </thead>
         <tbody>
-            <form action="../../php/createProvider.php" method="POST" id="formCreateProvider">
+            <form action="../../php/createProvider.php" method="POST" id="formCreateProvider" autocomplete="off">
                 <tr>
                     <td><input type="text" class="form-control" placeholder="Company Name" name="companyName"></td>
                     <td><input type="text" class="form-control" placeholder="RFC" name="RFC"></td>

@@ -61,7 +61,7 @@ $cant = $videogame->quantityVideogames();
             </tr>
         </thead>
         <tbody>
-            <form action="../../php/createVideogame.php" method="POST" id="formCreateVideogame" enctype="multipart/form-data">
+            <form action="../../php/createVideogame.php" method="POST" id="formCreateVideogame" enctype="multipart/form-data" autocomplete="off">
             <tr>
                 <td><input type="file" accept="image/*" class="form-control-file" id="Thumbnail" name="Thumbnail"></td>
                 <td><input type="text" class="form-control" placeholder="Company" name="Company"></td>
